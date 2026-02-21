@@ -1,0 +1,241 @@
+/* ========================= */
+/* Background + Stars        */
+/* ========================= */
+
+.auth-background {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: radial-gradient(ellipse at bottom, #0b1d33 0%, #000814 100%);
+  overflow: hidden;
+  position: relative;
+}
+
+/* Moving Stars */
+.auth-background::before {
+  content: "";
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  background-image: radial-gradient(white 1px, transparent 1px);
+  background-size: 50px 50px;
+  background-repeat: repeat;
+  animation: starsMove 100s linear infinite;
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+@keyframes starsMove {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(-1000px, -1000px);
+  }
+}
+
+/* ========================= */
+/* Shooting Star             */
+/* ========================= */
+
+.shooting-star {
+  position: absolute;
+  top: 20%;
+  left: -120px;
+  width: 120px;
+  height: 2px;
+  background: linear-gradient(90deg, #ffffff, transparent);
+  animation: shoot 6s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes shoot {
+  0% {
+    transform: translateX(0) translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(1400px) translateY(300px);
+    opacity: 0;
+  }
+}
+
+/* ========================= */
+/* Floating Planet           */
+/* ========================= */
+
+.planet {
+  position: absolute;
+  top: 10%;
+  right: 10%;
+  width: 120px;
+  height: 120px;
+  background: radial-gradient(circle at 30% 30%, #00c6ff, #004e92);
+  border-radius: 50%;
+  box-shadow: 0 0 40px #00c6ff;
+  animation: floatPlanet 6s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes floatPlanet {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+/* ========================= */
+/* Auth Card                 */
+/* ========================= */
+
+.auth-card {
+  position: relative;
+  z-index: 2;
+  width: 400px;
+  padding: 40px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.6);
+  transition: 0.4s ease;
+}
+
+/* ========================= */
+/* Header                    */
+/* ========================= */
+
+.auth-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.auth-header h2 {
+  color: #ffffff;
+  font-size: 28px;
+  font-weight: 600;
+}
+
+.auth-underline {
+  width: 60px;
+  height: 4px;
+  margin: 10px auto 0;
+  border-radius: 10px;
+  background: linear-gradient(90deg, #00c6ff, #0072ff);
+}
+
+/* ========================= */
+/* Form Wrapper              */
+/* ========================= */
+
+.form-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  transition: 0.5s ease;
+}
+
+/* ========================= */
+/* Input Group               */
+/* ========================= */
+
+.input-group {
+  display: flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.15);
+  padding: 12px 15px;
+  border-radius: 10px;
+  transition: 0.3s ease;
+}
+
+.input-group img {
+  width: 20px;
+  margin-right: 10px;
+}
+
+.input-group input {
+  flex: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: #ffffff;
+  font-size: 14px;
+}
+
+.input-group input::placeholder {
+  color: #cccccc;
+}
+
+/* Glow Effect on Focus */
+.input-group:focus-within {
+  box-shadow: 0 0 15px #00c6ff;
+  transform: scale(1.02);
+}
+
+/* ========================= */
+/* Animations                */
+/* ========================= */
+
+.slide {
+  animation: slideUp 0.5s ease;
+}
+
+@keyframes slideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* ========================= */
+/* Buttons                   */
+/* ========================= */
+
+.button-group {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 25px;
+}
+
+.btn {
+  padding: 10px 25px;
+  border-radius: 30px;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.2);
+  color: #cccccc;
+  transition: all 0.3s ease;
+}
+
+.btn.active {
+  background: linear-gradient(45deg, #00c6ff, #0072ff);
+  color: #ffffff;
+  box-shadow: 0 0 15px #00c6ff;
+}
+
+.btn:hover {
+  transform: scale(1.05);
+}
