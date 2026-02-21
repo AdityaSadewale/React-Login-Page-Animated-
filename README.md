@@ -15,7 +15,6 @@ This project features a space-themed background with moving stars, shooting star
 - 🔄 Toggle between Login & Sign Up
 - 💫 Smooth slide & fade animations
 - 🔥 Glowing input focus effect
-- 🤍 White styled "Forgot Password" section
 - 📱 Responsive design
 - 🎨 Clean and professional CSS structure
 
@@ -40,6 +39,7 @@ cd React-Login-Page-Animated-
 npm install
 4️⃣ Start Development Server
 npm start
+
 
 The app will run at:
 
